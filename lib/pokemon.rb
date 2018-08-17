@@ -1,7 +1,7 @@
 class Pokemon
   attr_accessor :id, :name, :type, :hp, :db
-  database_connection = SQLite3::Database.new('db/pokemon.db')
-  @@all = []
+  #database_connection = SQLite3::Database.new('db/pokemon.db')
+  #@@all = []
 
   def initialize(id:, name:, type:, hp:nil, db:)
     @id = id
@@ -9,7 +9,7 @@ class Pokemon
     @type = type
     @hp = hp
     @db = db
-    
+
 
   end
 
