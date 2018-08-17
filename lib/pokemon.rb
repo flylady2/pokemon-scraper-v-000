@@ -12,9 +12,6 @@ class Pokemon
 
   end
 
-  def self.all
-    @@all
-  end
 
   def self.save(name, type,  db)
     sql = "INSERT INTO pokemon(name, type) Values(?, ?)"
@@ -24,7 +21,7 @@ class Pokemon
   def self.find(id, db)
     sql = "SELECT * FROM pokemon WHERE id = ?"
     row = db.execute(sql, id).flatten
-    Pokemon.new(id: row[0], name: row[1], type: row[2], hp: row[3], db: db)
+    pokemon = Pokemon.new(id: row[0], name: row[1], type: row[2], hp: row[3], db: db)
   end
 
   def alter_hp(new_hp, db)
